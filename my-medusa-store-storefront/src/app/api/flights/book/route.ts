@@ -1,14 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
-import { Pool } from "pg"
+import { pool } from "@lib/db"
 import { cookies } from "next/headers"
 
-const pool = new Pool({
-  host: 'localhost',
-  port: 5432,
-  database: 'medusa-my-medusa-store',
-  user: 'postgres',
-  password: '12345678',
-})
+
 
 function generateBookingReference(): string {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'

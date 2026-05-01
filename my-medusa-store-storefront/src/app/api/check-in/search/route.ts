@@ -1,14 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
-import { Pool } from "pg"
+import { pool } from "@lib/db"
 import { fromZonedTime } from "date-fns-tz"
 
-const pool = new Pool({
-  host: "localhost",
-  port: 5432,
-  database: "medusa-my-medusa-store",
-  user: "postgres",
-  password: "12345678",
-})
+
 
 // Timezone для кожного аеропорту
 const AIRPORT_TIMEZONES: Record<string, string> = {
