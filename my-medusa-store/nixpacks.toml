@@ -1,0 +1,6 @@
+[phases.install]
+cmds = ["npm install -g corepack@0.24.1 && corepack enable", "yarn install --no-immutable"]
+[phases.build]
+cmds = ["yarn medusa build"]
+[start]
+cmd = "yarn medusa start"
